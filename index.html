@@ -646,6 +646,74 @@
             transform: translateY(1px) scale(0.99);
         }
 
+        /* PAGE 4 - new card layout for the 3D model viewer */
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        #page4 .card {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        #page4 .title {
+            font-weight: 900;
+            background: linear-gradient(45deg, #FF69B4, #FF1493);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .font-amiri {
+            font-family: 'Amiri', serif;
+        }
+
+        .font-tajawal {
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .font-cairo {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        #page4 .btn {
+            margin-top: 20px;
+            padding: 18px 48px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #FFD700, #FFDF00);
+            color: #2b0b1a;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 18px 50px rgba(255, 215, 0, 0.35);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        #page4 .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 24px 70px rgba(255, 215, 0, 0.45);
+        }
+
+        #page4 .btn:active {
+            transform: translateY(1px) scale(0.99);
+        }
+
         @keyframes slide-up {
             0% {
                 transform: translateY(100px);
@@ -1081,25 +1149,25 @@
 
     <!-- PAGE 4: Birthday Cake Animation -->
     <div id="page4" class="page">
-        <!-- Background hearts for page 4 -->
-        <div class="hearts-bg" id="heartsContainer4"></div>
-
-        <div class="page4-content">
-            <div class="cake-section">
+        <div class="hearts-container" id="heartsContainer4"></div>
+        <div class="card">
+            <h2 class="title font-amiri" style="font-size: 2rem; margin-bottom: 10px;">عيد ميلاد سعيد يا Queen 👑✨</h2>
+            <p class="font-tajawal" style="font-size: 1.1rem; color: #666; margin-bottom: 15px;">كل سنة وأنتِ أحلى وأسعد ❤️</p>
+            
+            <div style="width: 100%; height: 350px; position: relative; margin: 10px 0;">
                 <model-viewer 
                     src="cake3d.glb" 
                     alt="3D Birthday Cake" 
                     auto-rotate 
                     camera-controls 
-                    shadow-intensity="1"
-                    style="width: 100%; height: 380px; focus-outline: none; margin: 0 auto;">
+                    shadow-intensity="1.5"
+                    environment-image="neutral"
+                    exposure="1"
+                    interaction-prompt="none"
+                    style="width: 100%; height: 100%; outline: none; background-color: transparent;">
                 </model-viewer>
             </div>
-            <div class="cake-text">
-                <h1 class="cake-title">عيد ميلاد سعيد يا كوين! 🎉</h1>
-                <p class="cake-subtitle">كل سنة وأنتِ أحلى وأسعد 💖</p>
-            </div>
-            <button class="back-button" id="backToPage3Btn">الرجوع لي قائمه الهدايا 💌</button>
+            <button class="btn font-cairo" id="backToPage3Btn">الرجوع إلى قائمة الهدايا 🎁</button>
         </div>
     </div>
 
